@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: fta-masterclass
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: DOMAIN
+        sync: false

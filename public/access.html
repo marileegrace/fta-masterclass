@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FTA Masterclass | Your Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Quicksand:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-primary: #1B6B2A;
+      --green-dark: #0F4A1A;
+      --green-forest: #2F4A31;
+      --green-light: #f0faf2;
+      --gold: #FCC55B;
+      --gold-muted: #e8b84a;
+      --beige: #D9CEBD;
+      --beige-light: #EDE8E0;
+      --white: #FAFAF8;
+      --dark: #1a1a1a;
+      --dark-muted: #555;
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.10);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.6;
+      background: var(--beige-light);
+      min-height: 100vh;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-brand {
+      font-family: 'Questrial', sans-serif;
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .header-badge {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .welcome {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .welcome h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 36px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      color: var(--dark-muted);
+      font-size: 16px;
+    }
+
+    /* VIDEO SECTION */
+    .video-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 32px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: #111;
+    }
+
+    .video-wrapper iframe,
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+      gap: 12px;
+    }
+
+    .video-placeholder .play-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .video-info {
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .video-title {
+      font-family: 'Questrial', sans-serif;
+      font-size: 18px;
+    }
+
+    .video-badge {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: var(--green-light);
+      color: var(--green-primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* WORKBOOK DOWNLOAD */
+    .download-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .download-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .download-info {
+      flex: 1;
+    }
+
+    .download-info h3 {
+      font-family: 'Questrial', sans-serif;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .download-info p {
+      color: var(--dark-muted);
+      font-size: 13px;
+    }
+
+    .download-btn {
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(252,197,91,0.4);
+    }
+
+    /* NEXT STEPS */
+    .next-steps {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .next-steps h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      background: var(--green-light);
+      color: var(--green-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 15px;
+      color: var(--dark);
+      padding-top: 3px;
+    }
+
+    .step-text a {
+      color: var(--green-primary);
+      font-weight: 600;
+    }
+
+    /* LOCKED STATE */
+    .locked-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .locked-overlay.show {
+      display: flex;
+    }
+
+    .locked-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    .locked-box h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .locked-box p {
+      color: var(--dark-muted);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .locked-box a {
+      display: inline-block;
+      background: var(--green-primary);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .locked-box a:hover {
+      background: var(--green-dark);
+    }
+
+    @media (max-width: 768px) {
+      .download-card { flex-direction: column; text-align: center; }
+      .container { padding: 32px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <a href="/" class="header-brand">Foundational Trading Academy</a>
+    <div class="header-badge">Masterclass Access</div>
+  </div>
+
+  <!-- LOCKED OVERLAY (shown if payment not verified) -->
+  <div class="locked-overlay" id="lockedOverlay">
+    <div class="locked-box">
+      <h2>Access Required</h2>
+      <p>This page is for masterclass purchasers. If you've already purchased, check the link in your email confirmation.</p>
+      <a href="/#pricing">Get the Masterclass</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="welcome">
+      <h1>Welcome to Your Masterclass</h1>
+      <p>You're in. Here's everything you need to get started.</p>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-card">
+      <div class="video-wrapper">
+        <!--
+          REPLACE THIS with your video embed:
+          Option A (YouTube): <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          Option B (Vimeo): <iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          Option C (Self-hosted): <video controls src="/video/masterclass.mp4"></video>
+        -->
+        <div class="video-placeholder">
+          <div class="play-icon">&#9654;</div>
+          <span>Video will appear here once uploaded</span>
+        </div>
+      </div>
+      <div class="video-info">
+        <div class="video-title">The Complete Trading System</div>
+        <div class="video-badge">Full Masterclass</div>
+      </div>
+    </div>
+
+    <!-- WORKBOOK DOWNLOAD -->
+    <div class="download-card">
+      <div class="download-icon">&#128221;</div>
+      <div class="download-info">
+        <h3>FTA Masterclass Workbook</h3>
+        <p>Fillable PDF &bull; Reflection prompts, checklists, and exercises</p>
+      </div>
+      <a href="/FTA_Masterclass_Workbook.pdf" download class="download-btn">Download PDF</a>
+    </div>
+
+    <!-- NEXT STEPS -->
+    <div class="next-steps">
+      <h3>Getting the Most Out of This</h3>
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-text">Watch the full masterclass video start to finish. Don't skip ahead.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-text">Open the workbook and fill it in as you go. The reflection prompts help the concepts stick.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-text">Rewatch sections you want to practice. Focus on one layer at a time.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-text">Ready for more? Join the <a href="https://foundationaltrading.mn.co" target="_blank">FTA community</a> for live calls, quizzes, and ongoing support.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Verify payment on load
+    (async function() {
+      const params = new URLSearchParams(window.location.search);
+      const sessionId = params.get('session_id');
+
+      if (!sessionId) {
+        document.getElementById('lockedOverlay').classList.add('show');
+        return;
+      }
+
+      try {
+        const res = await fetch(`/verify-payment?session_id=${sessionId}`);
+        const data = await res.json();
+        if (!data.verified) {
+          document.getElementById('lockedOverlay').classList.add('show');
+        }
+      } catch (err) {
+        // If verification fails, still show content (graceful degradation)
+        console.error('Payment verification failed:', err);
+      }
+    })();
+  </script>
+
+</body>
+</html>

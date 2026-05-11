@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stop staring at charts. Start reading them. The FTA Masterclass teaches you the complete framework for reading risk environments, chart levels, macro forces, and building trade ideas.">
+    <meta name="theme-color" content="#2F4A31">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FTA Masterclass - Stop Staring at Charts. Start Reading Them.">
+    <meta property="og:description" content="The complete FTA framework in one masterclass. Learn to read charts, understand macro, and build trade ideas with confidence.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="FTN%20CIRCLE%20LOGO%20GREEN%20copy.png">
+    <link rel="icon" type="image/png" href="FTN%20CIRCLE%20LOGO%20GREEN%20copy.png">
+
+    <title>FTA Masterclass - Stop Staring at Charts. Start Reading Them.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-forest-green: #2F4A31;
+            --color-forest-dark: #1a2e1c;
+            --color-sand: #DBD2C6;
+            --color-mist: #D3DEE3;
+            --color-gold: #FCC55B;
+            --color-gray: #8B8B8B;
+            --color-off-white: #FAFAF7;
+            --color-light-bg: #f8f7f5;
+            --font-primary: 'Quicksand', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: #333;
+            background-color: var(--color-off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease;
+            padding: 1rem 2rem;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--color-forest-green);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .nav-logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-forest-green);
+        }
+
+        .nav-cta {
+            background: var(--color-forest-green);
+            color: #FFFFFF !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-primary);
+        }
+
+        .nav-cta:hover {
+            background: var(--color-forest-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(47, 74, 49, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .nav-links { display: none; }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+            background: linear-gradient(135deg, var(--color-forest-green) 0%, var(--color-forest-dark) 100%);
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 em {
+            font-style: italic;
+            color: var(--color-gold);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-cta {
+            background: var(--color-gold);
+            color: var(--color-forest-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-gold);
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-size: 1.05rem;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--color-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-logo-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-price-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .hero-price-tag .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+
+        .hero-price-tag .price-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 4px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+
+        /* Social Proof Bar */
+        .social-proof {
+            background: var(--color-light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .social-proof-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .proof-intro {
+            text-align: center;
+            color: var(--color-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .proof-heading {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+        }
+
+        .proof-heading em {
+            font-style: italic;
+            color: var(--color-forest-green);
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-forest-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--color-gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+
+        /* Section Chip */
+        .section-chip {
+            display: block;
+            text-align: center;
+            background: none;
+            color: var(--color-forest-green);
+            padding: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* The Problem Section */
+        .problem-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .problem-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .problem-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .problem-heading em {
+            font-style: italic;
+            color: var(--color-gold);
+        }
+
+        .problem-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .problem-card {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .problem-card .card-tag {
+            background: #ffe6e6;
+            color: #d32f2f;
+        }
+
+        .solution-card .card-tag {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .pain-points {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pain-point {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .pain-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: #d32f2f;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .problem-bottom {
+            border-top: 1px solid #eee;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .problem-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .problem-visual-box {
+            background: var(--color-light-bg);
+            border: 2px solid var(--color-forest-green);
+            border-radius: 1rem;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .problem-visual-box h3 {
+            font-size: 1.4rem;
+            color: var(--color-forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .problem-visual-box p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .problem-layout { grid-template-columns: 1fr; }
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 5rem 2rem;
+            background: var(--color-light-bg);
+        }
+
+        .solution-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .solution-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .solution-heading em {
+            font-style: italic;
+            color: var(--color-forest-green);
+        }
+
+        .solution-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .solution-card {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .solution-intro {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .solution-intro strong {
+            color: var(--color-forest-green);
+            font-weight: 700;
+        }
+
+        .outcomes {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .outcome {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .outcome-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .outcome strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        @media (max-width: 1024px) {
+            .solution-layout { grid-template-columns: 1fr; }
+        }
+
+        /* What's Included */
+        .whats-included {
+            padding: 5rem 2rem;
+            background: var(--color-light-bg);
+        }
+
+        .whats-included-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .whats-included h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .whats-included h2 em {
+            font-style: italic;
+            color: var(--color-forest-green);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--color-mist);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--color-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* How It Works / Curriculum */
+        .how-it-works {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .how-it-works-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .how-it-works h2 em {
+            font-style: italic;
+            color: var(--color-forest-green);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-mist);
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 100px;
+        }
+
+        .timeline-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--color-forest-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .timeline-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .timeline-step p {
+            color: var(--color-gray);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .timeline-tag {
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-size: 0.75rem;
+            color: var(--color-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Mid CTA Banner */
+        .mid-cta-banner {
+            background: linear-gradient(135deg, var(--color-forest-dark), var(--color-forest-green));
+            padding: 5rem 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .mid-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mid-cta-container h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .mid-cta-container h2 em {
+            font-style: italic;
+            color: var(--color-gold);
+        }
+
+        .mid-cta-container p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .mid-cta-container .price-note {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 2rem;
+            background: var(--color-light-bg);
+        }
+
+        .pricing-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--color-gold);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-gold);
+            color: var(--color-forest-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+        }
+
+        .pricing-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--color-forest-green);
+            margin: 1rem 0 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1.8rem;
+            vertical-align: top;
+        }
+
+        .pricing-subtitle {
+            color: var(--color-gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0;
+            font-size: 0.95rem;
+        }
+
+        .pricing-feature .check {
+            color: #2e7d32;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            background: var(--color-forest-green);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.05rem;
+            border: 2px solid var(--color-forest-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-primary);
+        }
+
+        .pricing-cta:hover {
+            background: transparent;
+            color: var(--color-forest-green);
+            transform: translateY(-2px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .faq-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+        }
+
+        .faq-heading {
+            position: sticky;
+            top: 100px;
+        }
+
+        .faq-heading h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+        }
+
+        .faq-heading h2 em {
+            font-style: italic;
+            color: var(--color-forest-green);
+        }
+
+        .faq-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--color-light-bg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: var(--color-light-bg);
+            border: none;
+            text-align: left;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #333;
+            transition: all 0.3s ease;
+            font-family: var(--font-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #eee;
+        }
+
+        .faq-question.active {
+            background: var(--color-forest-green);
+            color: white;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .faq-question.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 1024px) {
+            .faq-layout { grid-template-columns: 1fr; }
+            .faq-heading { position: relative; top: auto; }
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--color-forest-green), var(--color-forest-dark));
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .final-cta h2 em {
+            font-style: italic;
+            color: var(--color-gold);
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .final-cta-button {
+            background: var(--color-gold);
+            color: var(--color-forest-dark);
+            padding: 1.2rem 3rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-gold);
+            cursor: pointer;
+            font-family: var(--font-primary);
+            font-size: 1.05rem;
+        }
+
+        .final-cta-button:hover {
+            background: transparent;
+            color: var(--color-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .final-cta .price-note {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-forest-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-main-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-main-logo img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--color-sand);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .proof-heading { font-size: 1.6rem; }
+            .problem-heading, .solution-heading, .whats-included h2, .how-it-works h2 { font-size: 1.8rem; }
+            .nav-links { display: none; }
+            .feature-card { padding: 1.5rem; }
+            .final-cta h2 { font-size: 1.8rem; }
+            .hero-logo-placeholder { width: 200px; height: 200px; }
+        }
+
+        .btn-loading { opacity: 0.7; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <div class="nav-logo-circle"><img src="FTN%20CIRCLE%20LOGO%20GREEN%20copy.png" alt="FTA Logo"></div>
+                FTA Masterclass
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#whats-included">What's Inside</a></li>
+                <li><a href="#how-it-works">Curriculum</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#pricing" class="nav-cta">Get the Masterclass</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Stop Staring at Charts. Start <em>Reading</em> Them.</h1>
+                <p>The FTA Masterclass walks you through the complete framework for reading markets — from understanding risk environments to building trade ideas. One video. One system. Total clarity.</p>
+                <button class="hero-cta" onclick="checkout()">Get Instant Access — $37 →</button>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-logo-placeholder">
+                    <img src="FTN%20CIRCLE%20LOGO%20WHITE.png" alt="Foundational Trading Academy">
+                </div>
+                <div class="hero-price-tag">
+                    <div class="price">$37</div>
+                    <div class="price-note">One-time payment • Lifetime access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <section class="social-proof">
+        <div class="social-proof-container">
+            <p class="proof-intro">From the creator of Foundational Trading Academy</p>
+            <h2 class="proof-heading">One Framework. <em>Complete Clarity.</em> Real Confidence.</h2>
+            <div class="proof-stats">
+                <div class="stat-block">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Core Skills<br>Covered Start to Finish</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Students<br>Taught</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years<br>In the Markets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM SECTION -->
+    <section class="problem-section" id="about">
+        <div class="problem-container">
+            <span class="section-chip">Why Most New Traders Struggle</span>
+            <h2 class="problem-heading">You Don't Need More Indicators — You Need a <em>Framework.</em></h2>
+
+            <div class="problem-layout">
+                <div class="problem-card">
+                    <span class="card-tag">The Problem</span>
+                    <p>Most new traders don't fail because they're not smart enough. They fail because nobody gave them a connected system — one that ties chart reading, macro context, and execution together.</p>
+
+                    <ul class="pain-points">
+                        <li class="pain-point">
+                            <span class="pain-icon">✕</span>
+                            <span>You open a chart and <strong>don't know what you're looking at</strong></span>
+                        </li>
+                        <li class="pain-point">
+                            <span class="pain-icon">✕</span>
+                            <span>You've watched endless YouTube videos but <strong>nothing connects into a system</strong></span>
+                        </li>
+                        <li class="pain-point">
+                            <span class="pain-icon">✕</span>
+                            <span>You don't know when to <strong>be aggressive</strong> vs. when to sit on your hands</span>
+                        </li>
+                        <li class="pain-point">
+                            <span class="pain-icon">✕</span>
+                            <span>Support and resistance feel abstract — <strong>you can't find them reliably</strong></span>
+                        </li>
+                        <li class="pain-point">
+                            <span class="pain-icon">✕</span>
+                            <span>You hear "macro" and have <strong>no idea how it applies to your trades</strong></span>
+                        </li>
+                    </ul>
+
+                    <div class="problem-bottom">
+                        <strong>Bottom line:</strong> You're not missing discipline — you're missing the framework that connects the dots from market environment to chart reading to trade decision.
+                    </div>
+                </div>
+
+                <div class="problem-visual">
+                    <div class="problem-visual-box">
+                        <h3>This Masterclass Fixes That.</h3>
+                        <p>In one sitting, you'll learn how risk environments, chart levels, macro forces, and trade ideas all connect into a single, repeatable system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SOLUTION SECTION -->
+    <section class="solution-section">
+        <div class="solution-container">
+            <span class="section-chip">The Transformation</span>
+            <h2 class="solution-heading">Imagine opening a chart and <em>actually knowing what you're looking at.</em></h2>
+
+            <div class="solution-layout">
+                <div class="solution-card">
+                    <span class="card-tag">After This Masterclass</span>
+                    <div class="solution-intro">You'll walk away with a <strong>complete framework</strong> — not a collection of disconnected tips, but a connected system that tells you what to look at, in what order, and why.</div>
+
+                    <ul class="outcomes">
+                        <li class="outcome">
+                            <span class="outcome-icon">✓</span>
+                            <div>
+                                <strong>Read risk environments</strong> — know instantly whether conditions favor aggression or caution
+                            </div>
+                        </li>
+                        <li class="outcome">
+                            <span class="outcome-icon">✓</span>
+                            <div>
+                                <strong>Identify support, resistance, and zones</strong> — with precision, not guesswork
+                            </div>
+                        </li>
+                        <li class="outcome">
+                            <span class="outcome-icon">✓</span>
+                            <div>
+                                <strong>Understand multi-timeframe alignment</strong> — see how charts connect across timeframes
+                            </div>
+                        </li>
+                        <li class="outcome">
+                            <span class="outcome-icon">✓</span>
+                            <div>
+                                <strong>Grasp the three macro levers</strong> — growth, inflation, and liquidity
+                            </div>
+                        </li>
+                        <li class="outcome">
+                            <span class="outcome-icon">✓</span>
+                            <div>
+                                <strong>Build a trade idea</strong> — a clear, written framework for every decision
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="solution-card" style="background: var(--color-light-bg); border-color: var(--color-forest-green);">
+                    <span class="card-tag" style="background: #e8f5e9; color: #2e7d32;">The Result</span>
+                    <div class="solution-intro" style="font-size: 1.3rem; font-weight: 600; color: #333;">Confidence that comes from understanding — not from hoping a trade works out.</div>
+                    <p style="color: #555; line-height: 1.7;">You'll have a system that connects the big picture (macro) → the chart (levels & timeframes) → the decision (trade idea). No more staring. No more guessing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MID CTA -->
+    <section class="mid-cta-banner">
+        <div class="mid-cta-container">
+            <h2>Ready to Actually <em>Understand</em> What You're Looking At?</h2>
+            <p>One masterclass. One complete framework. The clarity to read any chart with confidence.</p>
+            <button class="hero-cta" onclick="checkout()">Get Instant Access — $37</button>
+            <div class="price-note">One-time payment • Lifetime access • Instant delivery</div>
+        </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="whats-included" id="whats-included">
+        <div class="whats-included-container">
+            <span class="section-chip">What You Get</span>
+            <h2>One Purchase. <em>Everything</em> You Need.</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Full Video Masterclass</h3>
+                    <p>Watch Marilee walk through the entire FTA framework from start to finish. Pause, rewind, and study at your own pace — it's yours forever.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Fillable PDF Workbook</h3>
+                    <p>A companion workbook with reflection prompts, checklists, and exercises to help each concept stick as you learn it.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Interactive Chart Examples</h3>
+                    <p>Concepts illustrated with chart patterns throughout — support/resistance zones, multi-timeframe views, and regime analysis.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>The Complete Connected Framework</h3>
+                    <p>Not a collection of tips. A single system that connects risk environments → chart reading → macro context → trade decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS / CURRICULUM -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="how-it-works-container">
+            <span class="section-chip">Inside the Masterclass</span>
+            <h2>From Confused to <em>Confident</em> in Six Phases</h2>
+
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="timeline-number">01</div>
+                    <h3>Risk-On vs Risk-Off</h3>
+                    <p>Learn to read the market environment before touching a chart. Understand when conditions favor aggression and when they demand caution.</p>
+                    <span class="timeline-tag">Foundations</span>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-number">02</div>
+                    <h3>Support, Resistance & Zones</h3>
+                    <p>Move beyond abstract lines. Learn to identify key levels with precision, turn them into actionable zones, and see when old resistance becomes new support.</p>
+                    <span class="timeline-tag">Chart Reading</span>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-number">03</div>
+                    <h3>Multi-Timeframe Analysis</h3>
+                    <p>See how daily, weekly, and intraday charts connect. Learn why the daily is your anchor and how to spot when multiple timeframes align.</p>
+                    <span class="timeline-tag">Connecting the Chart</span>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-number">04</div>
+                    <h3>The Three Macro Levers</h3>
+                    <p>Understand how growth, inflation, and liquidity shape market environments. Read the macro regime so you always know the bigger picture.</p>
+                    <span class="timeline-tag">Macro Analysis</span>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-number">05</div>
+                    <h3>Building a Trade Thesis</h3>
+                    <p>Put it all together. Construct a clear, written thesis for every trade — combining environment, levels, and macro into one decision framework.</p>
+                    <span class="timeline-tag">Strategy & Execution</span>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="timeline-number">06</div>
+                    <h3>The Emotional Cycle of Trading</h3>
+                    <p>Understand the psychological patterns every trader faces. Recognize where you are in the cycle and maintain discipline through uncertainty.</p>
+                    <span class="timeline-tag">Psychology</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-container">
+            <span class="section-chip">Simple Pricing</span>
+            <div class="pricing-card">
+                <div class="pricing-badge">Masterclass</div>
+                <div class="pricing-title">The Complete FTA Framework</div>
+                <div class="pricing-price"><span>$</span>37</div>
+                <div class="pricing-subtitle">One-time payment • Lifetime access</div>
+                <div class="pricing-features">
+                    <div class="pricing-feature"><span class="check">✓</span> Full video masterclass walkthrough</div>
+                    <div class="pricing-feature"><span class="check">✓</span> Fillable PDF companion workbook</div>
+                    <div class="pricing-feature"><span class="check">✓</span> 6 core trading skills covered</div>
+                    <div class="pricing-feature"><span class="check">✓</span> Interactive chart examples</div>
+                    <div class="pricing-feature"><span class="check">✓</span> Instant access after purchase</div>
+                    <div class="pricing-feature"><span class="check">✓</span> Watch forever, at your own pace</div>
+                </div>
+                <button class="pricing-cta" onclick="checkout()">Get the Masterclass →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-layout">
+                <div class="faq-heading">
+                    <h2>The Answers You Need <em>Before</em> You Buy</h2>
+                </div>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-question">What exactly is the masterclass? <span class="faq-arrow">▼</span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">It's a full video walkthrough of the FTA trading framework — from reading risk environments to building trade ideas. You also get a fillable PDF workbook to follow along with. Think of it as the complete foundation in one sitting.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Do I need trading experience? <span class="faq-arrow">▼</span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">No. The masterclass starts from the absolute basics and builds step by step. Whether you're brand new or have been trading without a system, it meets you where you are.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How is this different from the full FTA membership? <span class="faq-arrow">▼</span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">The masterclass gives you the complete framework in one video. The full FTA membership includes live calls, personalized support, community, and an in-depth curriculum with ongoing guidance. Think of this as the overview — the membership is the deep dive.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How do I access it after purchase? <span class="faq-arrow">▼</span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">Immediately after payment, you'll be redirected to your access page with the video and workbook download. Bookmark it — it's yours forever.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is there a refund policy? <span class="faq-arrow">▼</span></button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">Due to the digital nature of the product, all sales are final. At $37, it's priced to be a no-brainer for anyone serious about learning to trade with a system.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container">
+            <h2>Your Framework Starts Here. <em>Stop Guessing.</em></h2>
+            <p>One masterclass. One complete system. The clarity to actually read what the market is showing you.</p>
+            <button class="final-cta-button" onclick="checkout()">Get Instant Access — $37 →</button>
+            <div class="price-note">One-time payment • Lifetime access • Instant delivery</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main-logo">
+                <img src="FTN%20CIRCLE%20LOGO%20WHITE.png" alt="FTA Logo">
+            </div>
+            <div class="footer-logo">
+                <span class="footer-logo-text">Foundational Trading Academy</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://foundationaltrading.mn.co" target="_blank">Community</a>
+                <a href="https://www.instagram.com/marileegrace/" target="_blank">Instagram</a>
+                <a href="https://tiktok.com/@marilee.cordova" target="_blank">TikTok</a>
+                <a href="mailto:marilee@foundationaltrading.com">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Foundational Trading Academy. All rights reserved. | Marilee Cordova
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const isActive = button.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+
+                // Toggle clicked
+                if (!isActive) {
+                    button.classList.add('active');
+                    button.nextElementSibling.classList.add('active');
+                }
+            });
+        });
+
+        // Stripe Checkout
+        async function checkout() {
+            const buttons = document.querySelectorAll('.hero-cta, .pricing-cta, .final-cta-button, .nav-cta');
+            buttons.forEach(b => b.classList.add('btn-loading'));
+
+            try {
+                const response = await fetch('/create-checkout-session', { method: 'POST' });
+                const data = await response.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                alert('Unable to process payment. Please try again.');
+            } finally {
+                buttons.forEach(b => b.classList.remove('btn-loading'));
+            }
+        }
+    </script>
+</body>
+</html>
