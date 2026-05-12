@@ -20,7 +20,7 @@ app.post('/create-checkout-session', async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: 'FTA Masterclass: The Complete Trading System',
+              name: 'FTA Framework: The Complete Breakdown',
               description: 'Full video masterclass + interactive workbook PDF',
               images: ['https://fta-masterclass.onrender.com/logo.png'],
             },
